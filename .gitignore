@@ -1,3 +1,5 @@
 # dev files
 
 .vscode
+.ipynb_checkpoints
+data
