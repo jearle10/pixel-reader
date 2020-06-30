@@ -28,6 +28,8 @@ if __name__ == '__main__':
             y_max = row['ymax']
             label = row['label']
             label_str = row['class']
+            if label < 10:
+                label = str(label).zfill(2)
 
             sub_image = image[y_min:y_max, x_min:x_max]
             save_name = '{}/{}/{}_{}_{}.jpg'.format(PATH, TRAIN_FOLDER_SAVE,
