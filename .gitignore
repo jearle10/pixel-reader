@@ -3,3 +3,4 @@
 .vscode
 .ipynb_checkpoints
 data
+models/__pycache__
