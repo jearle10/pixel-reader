@@ -10,17 +10,20 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/', methods=['GET', 'POST'])
-def imageUpload():
+def image_upload():
     if request.method == "GET":
         return render_template('home.html')
 
+
+@app.route('/predict', methods=['POST'])
+def predict_image():
     if request.method == 'POST':
         print(request.files)
         file = request.files['file']
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-        return redirect(request.url)
+        return redirect('/')
 
 
 if __name__ == '__main__':
